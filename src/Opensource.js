@@ -5,7 +5,7 @@ export default function Opensource() {
   return (
     <span id="github-Link">
       <a
-        href="https://github.com/ZoePlayoust/weatherapp.git"
+        href="https://github.com/ZoePlayoust/weatherappreact"
         id="opensource"
         target="blank"
       >
