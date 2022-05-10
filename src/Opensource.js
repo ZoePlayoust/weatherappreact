@@ -3,7 +3,7 @@ import "./App.css";
 
 export default function Opensource() {
   return (
-    <span id="github-Link">
+    <span className="opensource" id="github-Link">
       <a
         href="https://github.com/ZoePlayoust/weatherappreact"
         id="opensource"

@@ -5,7 +5,7 @@ export default function Actualinfo() {
   return (
     <div className="actualInfo">
       <div id="city">Marseille</div>
-      <div class="current-date">
+      <div className="current-date">
         Last updated : Wednesday 10:52 <span id="date"></span>
       </div>
       <div className="row">
