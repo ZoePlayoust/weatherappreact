@@ -2,11 +2,13 @@ import axios from "axios";
 import React, { useState } from "react";
 import "./App.css";
 import Forecast from "./Forecast";
+import FormatedDate from "./FormatedDate";
 
 export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
+    console.log(response);
     setWeatherData({
       ready: true,
       temperature: response.data.main.temp,
@@ -15,7 +17,7 @@ export default function Search(props) {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       img: "http://openweathermap.org/img/wn/10d@2x.png",
-      date: `Last updated : Wednesday 10:52`,
+      date: new Date(response.data.dt * 1000),
     });
   }
   if (weatherData.ready) {
@@ -52,7 +54,7 @@ export default function Search(props) {
         <div className="actualInfo col-6 p-0">
           <div id="city">{weatherData.city}</div>
           <div className="current-date">
-            {weatherData.date} <span id="date"></span>
+            <FormatedDate date={weatherData.date} />, <span id="date"></span>
           </div>
           <div className="row">
             <div className="col-10">
