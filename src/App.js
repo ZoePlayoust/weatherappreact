@@ -2,9 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Search from "./Search";
-import Actualinfo from "./Actualinfo";
 import Opensource from "./Opensource";
-import Forecast from "./Forecast";
 
 export default function App() {
   return (

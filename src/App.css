@@ -49,7 +49,6 @@
 }
 
 .current {
-  left: 10px;
   background-color: #dc3545;
   border-color: #dc3545;
 }
@@ -76,7 +75,7 @@
 }
 
 .search-city {
-  padding: 20px;
+  padding-top: 20px;
 }
 
 #city {
@@ -97,13 +96,15 @@
   transition: 1s box-shadow;
 }
 .unit {
-  position: relative;
-  font-size: 20px;
-  margin-top: 20px;
-  bottom: -13px;
+  font-weight: lighter 300px;
   font-weight: 500;
   color: black;
+  position: relative;
+  font-size: 20px;
+  bottom: 50px;
   text-decoration: none;
+  padding-left: 2px;
+  opacity: 0.8;
 }
 a {
   font-weight: 600;
@@ -114,7 +115,9 @@ a {
 a:hover {
   color: #ff89ad;
 }
-
+span.unit {
+  font-weight: bold;
+}
 .day {
   font-size: 23px;
 }
@@ -133,6 +136,7 @@ a:hover {
   color: black;
   position: relative;
   bottom: 10px;
+  padding-right: 10px;
 }
 .current-time {
   font-size: 60px;
