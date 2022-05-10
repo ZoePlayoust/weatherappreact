@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.css";
+import FormatedDate from "./FormatedDate";
 
-export default function Actualinfo() {
+export default function Actualinfo(props) {
   return (
-    <div className="actualInfo">
-      <div id="city">Marseille</div>
+    <div className="actualInfo col-6 p-0">
+      <div id="city">{props.data.city}</div>
       <div className="current-date">
-        Last updated : Wednesday 10:52 <span id="date"></span>
+        <FormatedDate date={props.data.date} />, <span id="date"></span>
       </div>
       <div className="row">
         <div className="col-10">
@@ -14,13 +15,13 @@ export default function Actualinfo() {
             <div className="col-4">
               <img
                 id="weather-icon"
-                src="http://openweathermap.org/img/wn/10d@2x.png"
-                alt="rainy"
+                src={props.data.img}
+                alt={props.data.description}
               />
             </div>
             <div className="col-4">
               <span className="temperature" id="temperature-variable">
-                25
+                {Math.round(props.data.temperature)}
               </span>
             </div>
             <div className="col-4">
@@ -38,7 +39,7 @@ export default function Actualinfo() {
           <div className="row row3">
             <div className="col-12">
               <span className="precipitation" id="description">
-                Clear Sky
+                {props.data.description}
               </span>
             </div>
           </div>
@@ -48,7 +49,7 @@ export default function Actualinfo() {
             </div>
             <div className="col-4">
               <span className="pourcentage" id="humidity">
-                48 %
+                {props.data.humidity} %
               </span>
             </div>
           </div>
@@ -58,7 +59,7 @@ export default function Actualinfo() {
             </div>
             <div className="col-4">
               <span className="kmh" id="windspeed">
-                17 km/h
+                {Math.round(props.data.wind * 3.6)} km/h
               </span>
             </div>
           </div>
