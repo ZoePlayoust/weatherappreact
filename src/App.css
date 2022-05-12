@@ -94,6 +94,10 @@
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.25);
   transition: 1s box-shadow;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  padding-left: 27px;
+  padding-bottom: 13px;
 }
 .unit {
   font-weight: lighter 300px;
@@ -173,4 +177,5 @@ span.unit {
 }
 .image-forecast {
   text-align: center;
+  margin-top: 19px;
 }

@@ -15,7 +15,7 @@ export default function Actualinfo(props) {
         <div className="col-10">
           <div className="row">
             <div className="col-4">
-              <WeatherIcon code={props.data.img} />
+              <WeatherIcon code={props.data.img} size={85} />
             </div>
             <div className="col-8">
               <WeatherTemperature celsius={props.data.temperature} />

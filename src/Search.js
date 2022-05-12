@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Forecast from "./Forecast";
 import Actualinfo from "./Actualinfo";
+
 export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
@@ -17,13 +18,14 @@ export default function Search(props) {
       humidity: response.data.main.humidity,
       img: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
+      coords: response.data.coord,
     });
   }
 
   function search() {
-    const apiKey = "0c1a639b4888a93ab5ae1ed2074d5083";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
+    const apiKey = "411a942cf48762f8f3d00fd7b552fe5c";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -68,12 +70,8 @@ export default function Search(props) {
           </button>
         </div>
         <Actualinfo data={weatherData} />
-        <div className="col-6 block-days mt-4" id="weather-forecast">
-          <Forecast day="Thur" tempMax="25" tempMin="20" />
-          <Forecast day="Fri" tempMax="23" tempMin="18" />
-          <Forecast day="Sat" tempMax="30" tempMin="27" />
-          <Forecast day="Sun" tempMax="22" tempMin="17" />
-          <Forecast day="Mon" tempMax="18" tempMin="15" />
+        <div className="col-6 block-days" id="weather-forecast">
+          <Forecast coordinates={weatherData.coords} />
         </div>{" "}
       </div>
     );

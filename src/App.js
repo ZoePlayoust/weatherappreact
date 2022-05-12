@@ -10,7 +10,7 @@ export default function App() {
       <div className="container">
         <div className="row search-city">
           <div className="col-12">
-            <Search defaultCity="Arles" />
+            <Search defaultCity="London" />
           </div>
         </div>
         <div className="row"></div>
