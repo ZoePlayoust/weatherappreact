@@ -51,13 +51,12 @@ export default function Search(props) {
           />
         </form>
         <div className="col-2 search-city-button">
-          <button
+          <input
             type="submit"
             className="btn btn-primary mb-3 search"
-            id="search"
-          >
-            Search
-          </button>
+            value="Search"
+            onClick={handleSubmit}
+          />
         </div>
         <div className="col-2 search-city-button">
           <button
